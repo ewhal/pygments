@@ -1,5 +1,6 @@
 # pygments
 
+[![Build Status](https://travis-ci.org/ewhal/pygments.svg?branch=master)](https://travis-ci.org/ewhal/pygments)
 A pygments wrapper for golang
 
 ## Importing

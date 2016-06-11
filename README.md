@@ -1,6 +1,4 @@
-# pygments
-
-[![Build Status](https://travis-ci.org/ewhal/pygments.svg?branch=master)](https://travis-ci.org/ewhal/pygments)
+# pygments [![Build Status](https://travis-ci.org/ewhal/pygments.svg?branch=master)](https://travis-ci.org/ewhal/pygments)
 A pygments wrapper for golang
 
 ## Importing
@@ -26,7 +24,7 @@ pygments.Highlight("code", "lexer", "format", "encoding")
 ```
 
 ```go
-pygments.Highlight("print \"Hello World!\"", "python", "html", "utf-8")
+pygments.Highlight("print \"Hello World!\"", "python", "html", "full,", "utf-8")
 ```
 
 #### Provide Custom Path

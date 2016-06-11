@@ -22,14 +22,14 @@ func Which() string {
 	return bin
 }
 
-func Highlight(code string, lexer string, format string, enc string) string {
+func Highlight(code string, lexer string, format string, options string, enc string) string {
 
 	if _, err := exec.LookPath(bin); err != nil {
 		fmt.Println("You do not have " + bin + " installed!")
 		os.Exit(0)
 	}
 
-	cmd := exec.Command(bin, "-l"+lexer, "-f"+format, "-O encoding="+enc)
+	cmd := exec.Command(bin, "-l"+lexer, "-f"+format, "-O"+options+"encoding="+enc)
 	cmd.Stdin = strings.NewReader(code)
 
 	var out bytes.Buffer

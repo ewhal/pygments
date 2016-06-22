@@ -22,7 +22,7 @@ func Which() string {
 	return bin
 }
 
-func Highlight(code string, lexer string, format string, options string, enc string) string {
+func Highlight(code string, lexer string, format string, options string, enc string) (string, error) {
 
 	if _, err := exec.LookPath(bin); err != nil {
 		fmt.Println("You do not have " + bin + " installed!")
@@ -39,10 +39,8 @@ func Highlight(code string, lexer string, format string, options string, enc str
 	cmd.Stderr = &stderr
 
 	if err := cmd.Run(); err != nil {
-		fmt.Println(stderr.String())
-		fmt.Println(err)
-		os.Exit(0)
+		return "", err
 	}
 
-	return out.String()
+	return out.String(), nil
 }
